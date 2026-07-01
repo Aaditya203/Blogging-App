@@ -1,5 +1,5 @@
-import { Bookmark, CalendarDays, Eye, File, Heart, Link, MapPin } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import {  CalendarDays, Link, MapPin } from 'lucide-react'
+import  { useEffect, useState } from 'react'
 import EditProfile from './EditProfile';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
@@ -18,16 +18,13 @@ type Profile = {
     email:string
 }
 
-type Props={
-    setName: (name:string)=>void;
-    setEmail: (email:string)=>void;
-}
+
 
 const ProfileCard = () => {
     const [open,setOpen] = useState(false);
     const navigate = useNavigate();
     const {token} = useAuth();
-    const[loading,setLoading] = useState(false);
+    
     const [profileDetails,setProfileDetails] = useState<Profile | null>(null);
 
     useEffect(()=>{
@@ -38,7 +35,7 @@ const ProfileCard = () => {
         }
         async function getDetails(){
             try{
-                setLoading(true)
+               
                 const details = await getProfileDetails();
                 setProfileDetails(details);
 
@@ -48,7 +45,7 @@ const ProfileCard = () => {
                 return;
             }
             finally{
-                setLoading(false);
+                
             }
         }
         getDetails();

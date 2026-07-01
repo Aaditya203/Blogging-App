@@ -1,4 +1,4 @@
-import React from 'react'
+
 import NavBar from '../components/NavBar'
 import ExploreComingSoon from '@/components/ExploreComingSoon'
 

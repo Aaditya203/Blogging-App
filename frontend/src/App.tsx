@@ -1,11 +1,10 @@
-import { useState } from 'react'
+
 import { Routes,Route } from 'react-router-dom'
 import  SignUp  from "./pages/SignUp"
 import './App.css'
 import SignIn from './pages/SignIn'
 import Blogs from './pages/Blogs'
 import Explore from './pages/Explore'
-import Categories from './pages/Categories'
 import About from './pages/About'
 import Write from './pages/Write'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -16,7 +15,6 @@ import Profile from './pages/Profile'
 import MyBlogsPage from './pages/MyBlogsPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

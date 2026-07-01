@@ -20,7 +20,7 @@ import {
 import { Button } from "./ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { deleteBlog, getMyBlogs } from "@/services/blog.service";
 import { toast } from "sonner";
 import LoaderAnim from "./LoaderAnim";
@@ -51,9 +51,7 @@ export default function BlogManagement() {
 
   const {token} = useAuth();
   const [blogs,setBlogs] = useState<BlogsProps[]>([]);
-  const [loading,setLoading] = useState(true);
   const navigate = useNavigate();
-  const {id} = useParams<{id:string}>();
   const [isDeleted,setIsDeleted] = useState(false);
   const [blogToDelete,setBlogToDelete] = useState<string | null>(null);
 
@@ -73,9 +71,6 @@ export default function BlogManagement() {
         console.log(err);
         return;
       }
-      finally{
-        setLoading(false);
-      }
     }
 
     getBlogs();
@@ -88,7 +83,7 @@ export default function BlogManagement() {
     }
     try{
       setIsDeleted(true);
-      const response = await deleteBlog(id);
+      await deleteBlog(id);
       setBlogs((prev) => prev.filter((blog) => blog.id !== id));
       toast.success("Deleted Successfully!");
 

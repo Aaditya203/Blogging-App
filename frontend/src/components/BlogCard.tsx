@@ -1,7 +1,7 @@
-import React from 'react'
+
 import DOMPurify from 'dompurify'
 import { Heart } from 'lucide-react';
-import { icons } from '@/assets/asset';
+
 interface BlogCardProps {
     authorName:string;
     title:string;

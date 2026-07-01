@@ -2,9 +2,7 @@ import { useAuth } from "@/context/AuthContext";
 import { formatDate } from "@/lib/utils";
 import { getMyBlogs } from "@/services/blog.service";
 import {
-  Eye,
   Heart,
-  MessageCircle,
   MoreVertical,
   ArrowRight,
 } from "lucide-react";
@@ -22,7 +20,6 @@ type BlogsProps = {
 }
 export default function RecentBlogs() {
   const [blogs,setBlogs] = useState<BlogsProps[]>([]);
-  const [loading,setLoading] = useState(true);
   const {token} = useAuth();
   const navigate = useNavigate();
 
@@ -43,7 +40,7 @@ export default function RecentBlogs() {
         return;
       }
       finally{
-        setLoading(false);
+        
       }
     }
 

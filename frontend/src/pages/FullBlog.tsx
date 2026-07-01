@@ -6,12 +6,11 @@ import { Button } from '@/components/ui/button'
 import { useAuth } from '@/context/AuthContext'
 import { addHeadingIds, extractHeadings, formatDate } from '@/lib/utils'
 import { getBlogById } from '@/services/blog.service'
-import { ArrowLeft, ArrowLeftToLine, ArrowUp, Heading, Heart, UserPlus } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import { ArrowLeft,  ArrowUp,  Heart, UserPlus } from 'lucide-react'
+import  { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import DOMPurify from 'dompurify'
-import { icons } from '@/assets/asset'
 import { doLike, unLike } from '@/services/like.service'
 const FullBlog = () => {
     const {id} = useParams<{id:string}>();
@@ -24,7 +23,6 @@ const FullBlog = () => {
     const [authorUserName,setAuthorUserName]=useState("");
     const [authorBio,setAuthorBio]=useState("");
     const [createdAt,setCreatedAt] = useState("");
-    const [authorId,setAuthorId] = useState("");
     const {token} = useAuth();
     const [hasLiked,setHasLiked] = useState(false);
     const [likes,setLikes] = useState(0);
@@ -61,7 +59,6 @@ const FullBlog = () => {
                 setAuthorUserName(response.data.blogs.author.username);
                 setAuthorBio(response.data.blogs.author.bio);
                 setCreatedAt(response.data.blogs.createdAt);
-                setAuthorId(response.data.blogs.author.id);
                 setLikes(response.data.blogs.likesCount)
                 setHasLiked(response.data.blogs.hasLiked)
 

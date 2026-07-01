@@ -13,7 +13,7 @@ import NavBar from '@/components/NavBar'
 import { useAuth } from '@/context/AuthContext';
 import { getBlogById, updateBlog } from '@/services/blog.service';
 import Tiptap from '../components/TipTap'
-import { ArrowLeft, ArrowLeftToLine, CalendarDays, NotebookPen, Sparkles } from 'lucide-react';
+import { ArrowLeft, CalendarDays, NotebookPen, Sparkles } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -86,7 +86,7 @@ const EditBlog = () => {
 
       try{
         setIsUpdating(true);
-        const response = await updateBlog(id,title,content);
+        await updateBlog(id,title,content);
         toast.success("Blog Updated Successfully");
         navigate('/dashboard');
         return;

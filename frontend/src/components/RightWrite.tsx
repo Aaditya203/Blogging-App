@@ -15,19 +15,7 @@ import { ChevronDown, Globe, ImagePlus, Lock, Sparkles } from 'lucide-react'
 import { DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuTrigger } from './ui/dropdown-menu'
 import { Input } from './ui/input'
 import  LoaderAnim, { LoaderAnimWhite } from './LoaderAnim'
-type Status = 'public' | 'private'
-const statusConfig = {
-    public:{
-        icon: Globe,
-        label:'Public',
-        description:'Anyone can read this blog'
-    },
-    private:{
-        icon:Lock,
-        label:'Private',
-        description:'Only visible to followers'
-    }
-}
+
 
 type RightWriteProps ={
   onPublish:()=>void;

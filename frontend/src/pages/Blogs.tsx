@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import BlogCardSkeleton, { BlogCard } from '../components/BlogCard'
 import NavBar from '../components/NavBar'
 import { useAuth } from '@/context/AuthContext'

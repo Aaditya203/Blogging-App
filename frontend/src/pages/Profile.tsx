@@ -4,7 +4,7 @@ import ProfileSidebar from '@/components/ProfileLeft'
 import RecentBlogs from '@/components/RecentBlgs'
 import { useAuth } from '@/context/AuthContext'
 
-import React, { useState } from 'react'
+
 
 const Profile = () => {
   const {name} = useAuth();

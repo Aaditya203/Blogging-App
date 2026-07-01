@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import LeftWrite from '../components/LeftWrite'
 import NavBar from '@/components/NavBar'
 import RightWrite from '@/components/RightWrite'
@@ -39,7 +39,7 @@ const Write = () => {
     }
     try{
       setIsPublishing(true);
-      const data = await createPost(title,DOMPurify.sanitize(content))
+       await createPost(title,DOMPurify.sanitize(content))
       toast.success("Blog Created Successfully")
       navigate('/dashboard')
     }catch(error:any){

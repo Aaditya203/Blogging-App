@@ -1,7 +1,7 @@
-import { useAuth } from '@/context/AuthContext';
+
 import { updateProfileDetails } from '@/services/auth.service';
 import { ChevronDown, Link2, X } from 'lucide-react';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'sonner';
 
 const countries = [

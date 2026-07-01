@@ -2,7 +2,7 @@ import MyBlogs from '@/components/MyBlogs'
 import NavBar from '@/components/NavBar'
 import ProfileSidebar from '@/components/ProfileLeft'
 import { useAuth } from '@/context/AuthContext'
-import React from 'react'
+
 
 const MyBlogsPage = () => {
   const {name,email} = useAuth();

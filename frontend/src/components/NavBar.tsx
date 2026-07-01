@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import SearchBar from './SearchBar'
-import { Bell, ChevronDown, Menu, PencilLine, PenSquare, X } from 'lucide-react'
+import {  Menu, PencilLine, X } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
 import { getAvatarInitials } from './BlogCard'
 const NavBar = () => {
