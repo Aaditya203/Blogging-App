@@ -1,12 +1,12 @@
 import { Hono } from 'hono'
 import { verify  } from 'hono/jwt'
 import { cors } from 'hono/cors';
-import userRouter from './routes/user'
-import blogRouter from './routes/blog'
+import userRouter from './routes/user.js'
+import blogRouter from './routes/blog.js'
 import { serve } from '@hono/node-server';
 import "dotenv/config";
-import likeRouter from './routes/like';
-import aiRouter from './routes/ai';
+import likeRouter from './routes/like.js';
+import aiRouter from './routes/ai.js';
 
 type JwtPayload = {
   id: string;

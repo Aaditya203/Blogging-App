@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 
-import { prisma } from '../utils/prismaHelper';
-import { authMiddleware } from '../middleware/auth';
+import { prisma } from '../utils/prismaHelper.js';
+import { authMiddleware } from '../middleware/auth.js';
 const likeRouter = new Hono<{Bindings:{
   DATABASE_URL:string
 },

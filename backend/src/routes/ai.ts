@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { Hono } from 'hono'
 import { GoogleGenerativeAI } from '@google/generative-ai'
-import { authMiddleware } from "../middleware/auth";
+import { authMiddleware } from "../middleware/auth.js";
 
 
 const aiRouter = new Hono<{

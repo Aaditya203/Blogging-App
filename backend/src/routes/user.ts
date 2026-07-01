@@ -1,12 +1,12 @@
 import { Hono } from "hono";
 import { sign } from "hono/jwt";
-import { prisma } from "../utils/prismaHelper";
+import { prisma } from "../utils/prismaHelper.js";
 import bcrypt from "bcrypt"
-import { signUpSchema,signInSchema } from "../schema/index";
-import { Prisma } from "../generated/prisma/client";
+import { signUpSchema,signInSchema } from "../schema/index.js";
+import { Prisma } from "../generated/prisma/client.js";
 import { OAuth2Client } from "google-auth-library";
-import { generateToken } from "../utils/generateToken";
-import { authMiddleware } from "../middleware/auth";
+import { generateToken } from "../utils/generateToken.js";
+import { authMiddleware } from "../middleware/auth.js";
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID)
 const userRouter = new Hono<{Bindings:{

@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
-import { blogSchema, blogUpdateSchema } from '../schema/index';
-import { prisma } from '../utils/prismaHelper';
+import { blogSchema, blogUpdateSchema } from '../schema/index.js';
+import { prisma } from '../utils/prismaHelper.js';
 const blogRouter = new Hono<{Bindings:{
   DATABASE_URL:string
 },
