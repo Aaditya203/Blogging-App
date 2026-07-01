@@ -7,6 +7,8 @@ import { toast } from 'sonner';
 import { getProfileDetails } from '@/services/auth.service';
 import { getAvatarInitials } from './BlogCard';
 import { formatDate } from '@/lib/utils';
+import profileBg from "../assets/profileBG.png"
+
 type Profile = {
     id:string;
     name:string;
@@ -57,7 +59,7 @@ const ProfileCard = () => {
     <div className='relative overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm w-full mr-0 lg:mr-10'>
 
         <div className='absolute inset-0 bg-cover' style={{
-          backgroundImage: "url('/src/assets/profileBG.png')",
+          backgroundImage: `url(${profileBg})`,
         }}/>
         <div className="absolute inset-0 bg-white/" />
 
