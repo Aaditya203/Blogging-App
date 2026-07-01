@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { Hono } from 'hono'
 import { GoogleGenerativeAI } from '@google/generative-ai'
+import { authMiddleware } from "../middleware/auth";
 
 
 const aiRouter = new Hono<{
@@ -14,7 +15,7 @@ const aiRouter = new Hono<{
 }>()
 
 
-aiRouter.post('/suggestTitle',async(c)=>{
+aiRouter.post('/suggestTitle',authMiddleware,async(c)=>{
     const body = await c.req.json();
     if(!body.content || body.content.trim()=="<p></p>"){
         return c.json({message:"Content is Required"},400)
@@ -67,7 +68,7 @@ ${body.content.slice(0,3000)}`
 
 })
 
-aiRouter.post('/improveGrammar',async(c)=>{
+aiRouter.post('/improveGrammar',authMiddleware,async(c)=>{
     const body = await c.req.json();
     if(!body.content || body.content.trim()==="<p></p>"){
         return c.json({

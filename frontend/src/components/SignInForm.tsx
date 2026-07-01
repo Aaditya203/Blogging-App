@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import type {SignInSchema} from "../../../common/src/index"
+import type {SignInSchema} from "../schema/index"
 import { useState } from 'react'
 import { LabelledInput } from './LabelledInput'
 import LoaderAnim from './LoaderAnim'

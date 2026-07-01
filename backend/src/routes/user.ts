@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { sign } from "hono/jwt";
 import { prisma } from "../utils/prismaHelper";
 import bcrypt from "bcrypt"
-import { signUpSchema,signInSchema } from "../../../common/src/index";
+import { signUpSchema,signInSchema } from "../schema/index";
 import { Prisma } from "../generated/prisma/client";
 import { OAuth2Client } from "google-auth-library";
 import { generateToken } from "../utils/generateToken";
