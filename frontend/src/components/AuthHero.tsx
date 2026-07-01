@@ -67,11 +67,6 @@ const AuthHero = () => {
 
       </div>
 
-      <img
-        src="E:/blog/frontend/src/asset/background.png"
-        alt=""
-        className="w-full rounded-xl object-cover mt-16"
-      />
 
     </div>
   );
