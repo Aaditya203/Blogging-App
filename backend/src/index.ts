@@ -22,7 +22,16 @@ const app = new Hono<{
     }
 }>()
 
-app.use('/*',cors())
+app.use(
+  "/*",
+  cors({
+    origin: [
+      "http://localhost:5173",
+      process.env.CLIENT_URL!,
+    ],
+    credentials: true,
+  })
+);
 app.use('/api/v1/blog/*',async (c,next)=>{
     const authorizationID = c.req.header('Authorization');
     if(!authorizationID){
@@ -48,10 +57,11 @@ app.route('/api/v1/blog', blogRouter)
 app.route('/api/v1/like',likeRouter)
 app.route('/api/v1/ai',aiRouter)
 
+const port = Number(process.env.PORT) || 3000;
 serve(
   {
     fetch: app.fetch,
-    port: 3000,
+    port,
   },
   (info) => {
     console.log(`🚀 Server running at http://localhost:${info.port}`);
